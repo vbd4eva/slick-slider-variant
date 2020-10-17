@@ -17,7 +17,7 @@ function animateArrow(e) {
  
   e.target.classList.add("motion");
 
-  setTimeout(() => { e.target.classList.remove("motion"); }, 500);
+  setTimeout(() => { e.target.classList.remove("motion"); }, 700);
   
 
 }
