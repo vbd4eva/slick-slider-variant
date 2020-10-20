@@ -175,5 +175,21 @@
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
     <script src="js/slider-slick.js" type="module"></script>
+    <script type="module">
+      const el = document.createElement('div');
+      el.style.position = "fixed";
+      el.style.top = 0;
+      el.style.left = 0;
+  el.style.zIndex = 9999;
+    el.style.padding = "3px";
+  el.style.backgroundColor = "white";
+   el.textContent = screen.width + "px X " + screen.height + "px"; 
+      document.body.prepend(el);
+
+      window.addEventListener('resize', () => {
+         el.textContent = screen.width + "px X " + screen.height + "px"; 
+        });
+  
+    </script>
   </body>
 </html>
