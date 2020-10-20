@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $('.client-slider').slick();
+  $('.client-slider').slick();
 
   const clientSlider = document.querySelector('.clients');
 
@@ -12,13 +12,13 @@ $(document).ready(function () {
 });
 
 
-function animateArrow(e) { 
-  if(!e.target.classList.contains('slick-arrow')) return false;
- 
+function animateArrow(e) {
+  if (!e.target.classList.contains('slick-arrow')) return false;
+
   e.target.classList.add("motion");
 
   setTimeout(() => { e.target.classList.remove("motion"); }, 700);
-  
 
+  // https://codepen.io/manelroig/pen/rJMVRO
 }
 

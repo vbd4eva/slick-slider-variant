@@ -183,13 +183,19 @@ summary {
           transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  border-radius: 37%;
-  border: 2px solid #fff;
+  border-radius: 50%;
+  border: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
   color: transparent;
+}
+
+.client-slider .slick-arrow:focus {
+  border: solid 1px #33333357;
+  outline: none;
 }
 
 .client-slider .slick-arrow.motion:before,
@@ -236,7 +242,7 @@ summary {
 }
 
 .client-slider .slick-prev {
-  left: 0;
+  left: 25px;
   -webkit-transform: translateY(-50%) rotate(180deg);
           transform: translateY(-50%) rotate(180deg);
   -webkit-transform-origin: center;
@@ -244,7 +250,7 @@ summary {
 }
 
 .client-slider .slick-next {
-  right: 0;
+  right: 25px;
 }
 
 @-webkit-keyframes bounceAlpha {
