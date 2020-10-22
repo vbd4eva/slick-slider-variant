@@ -1,17 +1,51 @@
 
 console.log("heade-slide");
 
-const headerEl = document.querySelector(".js-header");
+const HEADER_HIDE_CLASS = "hide-down";
 
- window.addEventListener('scroll', onScrollHeaderReaction);
- document.addEventListener('click', onClickHeaderReaction);
-
-function onScrollHeaderReaction() { 
-    if (!headerEl.classList.contains('hide-down')) headerEl.classList.add('hide-down');
-     console.log(headerEl+"-"+Date());
+const refs = {
+    "header": document.querySelector(".js-header"),
+    "clients": document.querySelector(".js-clients")
 }
 
-function onClickHeaderReaction(e) {  
-    if (e.target.classList.contains('hide-down')) { headerEl.classList.remove('hide-down'); return;}
-    if (e.target !==  headerEl && !headerEl.classList.contains('hide-down')) { headerEl.classList.add('hide-down'); return; }
+addListenersToHideHeader();
+
+function isHeaderHidden() { 
+    return refs.header.classList.contains(HEADER_HIDE_CLASS);
 }
+
+function hideHeader() { 
+    refs.header.classList.add(HEADER_HIDE_CLASS);
+
+    refs.header.addEventListener('click', showHeader, {once:true});
+}
+
+function showHeader(e) { 
+    console.log("showHeader() by "+e.type);
+    refs.header.classList.remove(HEADER_HIDE_CLASS);
+    addListenersToHideHeader();
+}
+
+function actionsOnHideHeader(e) {
+    
+    console.log("actionsOnHideHeader() by " + e.type);
+
+    if (!isHeaderHidden()) hideHeader(e);
+
+    removeListenersToHideHeader();
+}
+ 
+function addListenersToHideHeader() { 
+
+    refs.clients.addEventListener('click', actionsOnHideHeader);    
+    refs.clients.addEventListener('touchmove', actionsOnHideHeader);
+    window.addEventListener('scroll', actionsOnHideHeader);
+
+}
+function removeListenersToHideHeader() { 
+    refs.clients.removeEventListener('click', actionsOnHideHeader);    
+    refs.clients.removeEventListener('touchmove', actionsOnHideHeader);
+    window.removeEventListener('scroll', actionsOnHideHeader);
+}
+
+
