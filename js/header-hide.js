@@ -13,39 +13,35 @@ addListenersToHideHeader();
 function isHeaderHidden() { 
     return refs.header.classList.contains(HEADER_HIDE_CLASS);
 }
-
 function hideHeader() { 
     refs.header.classList.add(HEADER_HIDE_CLASS);
 
     refs.header.addEventListener('click', showHeader, {once:true});
 }
-
 function showHeader(e) { 
     console.log("showHeader() by "+e.type);
     refs.header.classList.remove(HEADER_HIDE_CLASS);
     addListenersToHideHeader();
 }
-
-function actionsOnHideHeader(e) {
+function actionsToHidingHeader(e) {
     
-    console.log("actionsOnHideHeader() by " + e.type);
+    console.log("actionsToHidingHeader() by " + e.type);
 
     if (!isHeaderHidden()) hideHeader(e);
 
     removeListenersToHideHeader();
-}
- 
+} 
 function addListenersToHideHeader() { 
 
-    refs.clients.addEventListener('click', actionsOnHideHeader);    
-    refs.clients.addEventListener('touchmove', actionsOnHideHeader);
-    window.addEventListener('scroll', actionsOnHideHeader);
+    refs.clients.addEventListener('click', actionsToHidingHeader);    
+    refs.clients.addEventListener('touchmove', actionsToHidingHeader);
+    window.addEventListener('scroll', actionsToHidingHeader);
 
 }
 function removeListenersToHideHeader() { 
-    refs.clients.removeEventListener('click', actionsOnHideHeader);    
-    refs.clients.removeEventListener('touchmove', actionsOnHideHeader);
-    window.removeEventListener('scroll', actionsOnHideHeader);
+    refs.clients.removeEventListener('click', actionsToHidingHeader);    
+    refs.clients.removeEventListener('touchmove', actionsToHidingHeader);
+    window.removeEventListener('scroll', actionsToHidingHeader);
 }
 
 

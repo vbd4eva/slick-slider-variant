@@ -1,24 +1,10 @@
 $(document).ready(function () {
 
-  $('.client-slider').slick();
-
-  const clientSlider = document.querySelector('.clients');
-
-  clientSlider.addEventListener("click", animateArrow);
-
-
-
-
+  $('.client-slider').slick(
+    { 
+       prevArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Previous" type="button">предыдущий слайд</button>',
+       nextArrow: '<button class="client-slider__arrow double-arrow js-double-arrow-animate" aria-label="Next" type="button">следующий слайд</button>'
+    }
+  );   
+  
 });
-
-
-function animateArrow(e) {
-  if (!e.target.classList.contains('slick-arrow')) return false;
-
-  e.target.classList.add("motion");
-
-  setTimeout(() => { e.target.classList.remove("motion"); }, 700);
-
-  // https://codepen.io/manelroig/pen/rJMVRO
-}
-
