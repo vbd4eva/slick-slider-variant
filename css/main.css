@@ -143,6 +143,23 @@ summary {
 }
 
 /* end normalize */
+.header__toggle-btn, .contacts-mobile-toggle, .menu-mobile-toggle, .double-arrow {
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.header__toggle-btn, .contacts-mobile-toggle, .menu-mobile-toggle, .double-arrow {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: transparent;
+}
+
 .header {
   position: fixed;
   z-index: 9;
@@ -150,7 +167,14 @@ summary {
   bottom: 0;
   width: 100%;
   height: 60px;
-  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-transform: translateY(0);
           transform: translateY(0);
   -webkit-transition: -webkit-transform 300ms linear 0.3s;
@@ -162,6 +186,49 @@ summary {
 .header.hide-down {
   -webkit-transform: translateY(30px);
           transform: translateY(30px);
+}
+
+.header__contacts {
+  text-transform: uppercase;
+}
+
+.header__client-list {
+  text-transform: uppercase;
+}
+
+.header__toggle-btn {
+  background-color: #fff;
+}
+
+.header__toggle-btn.is-open {
+  position: relative;
+  z-index: 92;
+  background-color: #000000;
+}
+
+.header__toggle-btn .icon-close,
+.header__toggle-btn.is-open .icon-open {
+  display: none;
+}
+
+.header__toggle-btn.is-open .icon-close {
+  display: block;
+  fill: #fff;
+}
+
+.header__toggle-container {
+  display: none;
+}
+
+.header__toggle-container.is-open {
+  display: block;
+  position: absolute;
+  z-index: 91;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: crimson;
 }
 
 .client-slider {
@@ -212,20 +279,6 @@ summary {
   margin: 0;
   padding: 10px;
   background: yellow;
-}
-
-.double-arrow {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: transparent;
 }
 
 .double-arrow:before, .double-arrow:after {

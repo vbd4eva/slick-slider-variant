@@ -13,7 +13,34 @@
   </head>
   <body>
 
-    <header class="header js-header"></header>
+    <header class="header js-header">
+
+      <div class="header__contacts">
+        <button class="header__toggle-btn" type="button" aria-controls="contacts-mobile-container"
+          aria-expanded="false" data-contacts-button="">
+          <svg width="40px" height="40px" aria-label="переключатель информационного блока">
+            <use class="icon-open" href="./images/theme/svg-images.svg#iconmonstr-info-3"></use>
+            <use class="icon-close" href="./images/theme/svg-images.svg#iconmonstr-info-4"></use>
+          </svg>
+        </button>
+        <div class="header__toggle-container" data-contacts="">
+          contacts-mobile-container
+        </div>
+      </div>
+      <div class="header__client-list">
+        <button class="header__toggle-btn" type="button" aria-controls="menu-mobile-container" aria-expanded="false"
+          data-menu-button="">
+          <svg width="40px" height="40px" aria-label="переключатель информационного блока">
+            <use class="icon-open" href="./images/theme/svg-images.svg#iconmonstr-menu-5"></use>
+            <use class="icon-close" href="./images/theme/svg-images.svg#iconmonstr-menu-6"></use>
+          </svg>
+        </button>
+        <div class="header__toggle-container" data-menu="">
+          menu-mobile-container
+        </div>
+      </div>           
+
+    </header>
 
     <div class="clients js-clients">
       <div class="client-slider keller">
@@ -189,8 +216,11 @@
     </div>
 
     <!-- js   -->
-    <script src="./js/header-hide.js" type="module"></script>
 
+    <script src="./js/header-hide.js" type="module"></script>
+    <script src="./js/mobile-toggle.js" type="module"></script>
+
+    <!-- jquery -->
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
@@ -203,6 +233,7 @@
       type="text/javascript"
       src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <!-- clients -->
     <script src="js/slider-slick.js" type="module"></script>
     <script src="js/double-arrows.js" type="module"></script>
 

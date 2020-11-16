@@ -1,0 +1,25 @@
+%btn {
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  cursor: pointer;
+
+  &--standart-circle {
+    position: relative;
+
+    width: $btn--standart-circle__size;
+    height: $btn--standart-circle__size;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    background-color: $btn--standart-circle__fill;
+    color: transparent;
+  }
+}
+
+%svg {
+  fill: currentColor;
+  display: block;
+}

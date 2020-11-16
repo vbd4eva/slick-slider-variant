@@ -1,6 +1,4 @@
-
-console.log("heade-slide");
-
+// slide down header .on "slide client image" or "scrolling"
 const HEADER_HIDE_CLASS = "hide-down";
 
 const refs = {
