@@ -26,8 +26,14 @@ class MobileToggle {
     };
 
     _init() { 
-        // console.log('_init !!');
         this.refs.buttonEl.addEventListener("click", this._onClick.bind(this));
+
+        const menuCloseLinks = this.refs.containerEl.querySelectorAll('.menu-close');
+        menuCloseLinks.forEach(
+            link => {
+                link.addEventListener("click", this._onClick.bind(this));
+            }
+        );        
     };
 
     _onClick() { 

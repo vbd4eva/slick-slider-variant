@@ -1,0 +1,24 @@
+.clients-in-slider-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &__list {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__link {
+    color: $color--white;
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+  }
+}

@@ -147,14 +147,14 @@ summary {
   overflow-y: hidden;
 }
 
-.header__toggle-btn, .contacts-mobile-toggle, .menu-mobile-toggle, .double-arrow {
+.header__toggle-btn, .double-arrow {
   margin: 0;
   padding: 0;
   border: none;
   cursor: pointer;
 }
 
-.header__toggle-btn, .contacts-mobile-toggle, .menu-mobile-toggle, .double-arrow {
+.header__toggle-btn, .double-arrow {
   position: relative;
   width: 40px;
   height: 40px;
@@ -233,6 +233,32 @@ summary {
   width: 100%;
   height: 100vh;
   background-color: #000000;
+}
+
+.clients-in-slider-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.clients-in-slider-menu__list {
+  padding: 0;
+  margin: 0;
+}
+
+.clients-in-slider-menu__item {
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.clients-in-slider-menu__link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px;
+  display: block;
 }
 
 .client-slider {
