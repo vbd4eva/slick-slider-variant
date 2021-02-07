@@ -9,12 +9,12 @@
     stopScrollEventListener(callback);
      
    function stopScrollEventListener( callback=()=>alert('закончили прокрутку'), timeInterval=250,){
-    $(window).on('wheel', function(e) {
-      if (window.wheelTimeout) {
-        window.clearTimeout(window.wheelTimeout);
+    $(window).on('scroll', function(e) {
+      if (window.scrollTimeout) {
+        window.clearTimeout(window.scrollTimeout);
       }
      
-      window.wheelTimeout = window.setTimeout(function() {
+      window.scrollTimeout = window.setTimeout(function() {
           callback();
       }, timeInterval);
     });
