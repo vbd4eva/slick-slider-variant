@@ -32,29 +32,33 @@ class MobileToggle {
 
     _onClick() { 
 
-        const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true" || false;
+        const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true";
+        // const expanded = this.refs.buttonEl.getAttribute("aria-expanded") === "true" || false;
 
-        this._listenScroll(!expanded);
+        // this._listenScroll(!expanded);
 
         this.refs.buttonEl.classList.toggle("is-open");
         this.refs.buttonEl.setAttribute("aria-expanded", !expanded);
 
-        this.refs.containerEl.classList.toggle("is-open");       
+        this.refs.containerEl.classList.toggle("is-open");     
+        
+        document.documentElement.classList.toggle('y-scroll-off');
     }
 
-    _listenScroll(resolution) { 
+    // _listenScroll(resolution) { 
 
-        if (resolution) {
-            document.addEventListener('scroll', this._stopScrollPropagation);
-        }
-        else {
-            document.removeEventListener('scroll', this._stopScrollPropagation);
-        }
-    }
+    //     if (resolution) {
+    //         document.addEventListener('scroll', this._stopScrollPropagation);
+    //     }
+    //     else {
+    //         document.removeEventListener('scroll', this._stopScrollPropagation);
+    //     }
+    // }
 
-    _stopScrollPropagation(e) { 
-        e.stopPropagation();
-    }
+    // _stopScrollPropagation(e) { 
+    //     e.stopPropagation();
+    //     console.log(e);
+    // }
 
 }
 

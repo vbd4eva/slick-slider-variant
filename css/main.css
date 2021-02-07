@@ -143,6 +143,10 @@ summary {
 }
 
 /* end normalize */
+.y-scroll-off {
+  overflow-y: hidden;
+}
+
 .header__toggle-btn, .contacts-mobile-toggle, .menu-mobile-toggle, .double-arrow {
   margin: 0;
   padding: 0;
@@ -192,7 +196,7 @@ summary {
   text-transform: uppercase;
 }
 
-.header__client-list {
+.header__menu {
   text-transform: uppercase;
 }
 
