@@ -8,16 +8,21 @@
     
     stopScrollEventListener(callback);
      
-   function stopScrollEventListener( callback=()=>alert('закончили прокрутку'), timeInterval=250,){
-    $(window).on('scroll', function(e) {
-      if (window.scrollTimeout) {
-        window.clearTimeout(window.scrollTimeout);
-      }
-     
-      window.scrollTimeout = window.setTimeout(function() {
-          callback();
-      }, timeInterval);
-    });
+     function stopScrollEventListener(callback = () => alert('закончили прокрутку'), timeInterval = 250,) {
+       
+         
+        $(window).on('scroll', function(e) {
+            if (window.scrollTimeout) {
+                window.clearTimeout(window.scrollTimeout);
+                console.log('timer cleared');
+            }
+        
+            console.log('timer start');
+            window.scrollTimeout = window.setTimeout(function () {
+                console.log('timer end');
+                callback();
+            }, timeInterval);
+        });
 }
 }
 
